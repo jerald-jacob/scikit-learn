@@ -1,0 +1,85 @@
+m1<-cbind(1,1:30)
+colnames(m1)<-c("a","b")
+rownames(m1)<-rownames(m1,do.NULL =FALSE,prefix = "Marian .")
+print(m1)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+no1=as.integer(readline(prompt = "enter the first : "))
+no2=as.integer(readline(prompt = "enter the last : "))
+no3 <- (no2+1)
+print(paste(no1,"first no"))
+print(paste(no2,"last no"))
+print("****************************")
+if((no1 %% 2) ==0){
+  evn=no1
+  print(paste(evn,"is even no"))
+  odd=(no1+1)
+  print(paste(odd,"is odd no"))
+ }else{
+  odd=no1
+  print(paste(odd,"is odd no"))
+  evn=(no1+1)
+  print(paste(evn,"is even no"))
+ }
+no=evn
+for(i in no:no2){
+  if(evn == no2 | odd == no2){
+    break
+}
+  evn=evn+2
+  odd=odd+2
+  print(paste(odd,"is odd no"))
+  print(paste(evn,"is even no"))
+}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+student_name<-list("albin","bibin","chinnu","dibin")
+student_reg<-list(17,18,19,20)
+student_age=c(20,21,22,21)
+student_mark<-c(63,65,45,58)
+result<-list(student_name,student_reg,student_age,student_mark)
+
+#print(result)
+
+maxmark_student_name<-function(student_mark,student_name){
+  print("student with maximum mark")
+  print(max(student_mark))
+  index<-max(student_mark)
+  po<-which(student_mark==index)
+  print(po)
+  Stu_name<-student_name[po]
+  print(Stu_name)
+  age<-student_age[po]
+  cat("age",age)
+}
+Mean_of_student<-function(student_mark){
+  print("student mark avarage")
+  print(mean(student_mark))
+}
+number_of_student<-function (student_name){
+  print("totel number of students")
+  print(length(student_name))
+}
+atleast_sixty<-function(student_mark){
+  
+  print("student with atleast 60 %")
+  print(student_mark<60)
+}
+standard_devation<-function(student_mark){
+  
+  print("standard deviation of  the mark")
+  print(sd(student_mark))
+  
+}
+print("1. student with maximum mark")
+print("2. student mark avarage")
+print("3. student with atleast 60 %")
+print("4. standard deviation of  the mark")
+print("5. totel number of students")
+user_input<-(readline(prompt="enter your choise"))
+switch(as.numeric(user_input),
+       maxmark_student_name(student_mark,student_name),
+       Mean_of_student(student_mark),number_of_student(student_name),
+       atleast_sixty(student_mark),
+       standard_devation(student_mark)
+       )
